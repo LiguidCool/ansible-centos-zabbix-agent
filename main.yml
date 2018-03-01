@@ -1,11 +1,12 @@
-- name: CentOS Basic Environment
+- name: CentOS 7 Zabbix-agent install
   hosts: all
   tasks:
-    - name: Extra Packages for Enterprise Linux 7
-      yum: pkg=epel-release
-    - name: Installs Envirement Packages
+    - name: Zabbix Repository
+      yum:
+        name: http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-release-3.4-1.el7.centos.noarch.rpm
+        state: present
+    - name: Installs Zabbix-agent
       yum: pkg={{ item }}
       with_items:
-        - mc
-        - htop
-        - net-tools
+        - zabbix
+        - zabbix-agent
