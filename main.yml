@@ -33,7 +33,7 @@
         name: zabbix-non-supported
         file: zabbix
         description: Zabbix Official Repository non-supported
-        baseurl: http://repo.zabbix.com/rhel/{{ distribution_major_version | default(ansible_distribution_major_version) }}/$basearch/
+        baseurl: http://repo.zabbix.com/non-supported/rhel/{{ distribution_major_version | default(ansible_distribution_major_version) }}/$basearch/
         gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
     - name: Installs Zabbix-agent
       yum: pkg=zabbix-agent
