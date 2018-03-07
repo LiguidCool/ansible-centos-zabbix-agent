@@ -1,7 +1,14 @@
-- name: CentOS 7 Zabbix-agent install
+- name: CentOS Zabbix-agent install
   hosts: all
   tasks:
-    - name: Zabbix Repository Keys
+    - name: Zabbix Repository key ZABBIX
+      get_url:
+        url: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX
+        dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+    - name: Zabbix Repository key ZABBIX-A14FE591
       get_url:
         url: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
         dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
@@ -13,6 +20,6 @@
         name: zabbix
         description: Zabbix Official Repository - $basearch
         baseurl: http://repo.zabbix.com/zabbix/3.4/rhel/{{ distribution_major_version | default(ansible_distribution_major_version) }}/$basearch/
-        gpgkey: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
+        gpgkey: /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
     - name: Installs Zabbix-agent
       yum: pkg=zabbix-agent
