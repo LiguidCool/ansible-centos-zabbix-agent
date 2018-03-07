@@ -4,7 +4,7 @@
     - name: Zabbix Repository Keys
       get_url:
         url: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
-        dest: RPM-GPG-KEY-ZABBIX-A14FE591
+        dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
         owner: root
         group: root
         mode: u=rw,g=r,o=r
