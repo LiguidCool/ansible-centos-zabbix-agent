@@ -3,7 +3,7 @@
   tasks:
     - name: Zabbix Repository Keys
       get_url:
-        src: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
+        url: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
         dest: RPM-GPG-KEY-ZABBIX-A14FE591
         owner: root
         group: root
