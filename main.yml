@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     - name: Zabbix Repository Keys
-      copy:
+      get_url:
         src: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
         dest: RPM-GPG-KEY-ZABBIX-A14FE591
         owner: root
