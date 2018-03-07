@@ -3,11 +3,11 @@
   tasks:
     - name: Zabbix Repository Keys
       copy:
-      src: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
-      dest: RPM-GPG-KEY-ZABBIX-A14FE591
-      owner: root
-      group: root
-      mode: u=rw,g=r,o=r
+        src: http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
+        dest: RPM-GPG-KEY-ZABBIX-A14FE591
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
     - name: Zabbix Repository
       yum_repository:
         name: zabbix
