@@ -44,3 +44,5 @@
         mode=0644
         owner=root
         group=root
+    name: Restart Zabbix-agent
+      service: name=zabbix-agent state=restarted
