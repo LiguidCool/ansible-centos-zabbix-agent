@@ -37,3 +37,10 @@
         gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
     - name: Installs Zabbix-agent
       yum: pkg=zabbix-agent
+    - name: Setup Zabbix-agent configuration
+      template: 
+        src=templates/zabbix_agentd.conf.j2
+        dest=/etc/zabbix/zabbix_agentd.conf
+        mode=0644
+        owner=root
+        group=root
