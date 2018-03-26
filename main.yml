@@ -21,20 +21,6 @@
         description: Zabbix Official Repository
         baseurl: http://repo.zabbix.com/zabbix/3.4/rhel/{{ distribution_major_version | default(ansible_distribution_major_version) }}/$basearch/
         gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
-    - name: Zabbix Official Repository deprecated
-      yum_repository:
-        name: zabbix-deprecated
-        file: zabbix
-        description: Zabbix Official Repository
-        baseurl: http://repo.zabbix.com/zabbix/3.4/rhel/{{ distribution_major_version | default(ansible_distribution_major_version) }}/$basearch/deprecated
-        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
-    - name: Zabbix Official Repository non-supported
-      yum_repository:
-        name: zabbix-non-supported
-        file: zabbix
-        description: Zabbix Official Repository non-supported
-        baseurl: http://repo.zabbix.com/non-supported/rhel/{{ distribution_major_version | default(ansible_distribution_major_version) }}/$basearch/
-        gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
     - name: Installs Zabbix-agent
       yum: pkg=zabbix-agent
     - name: Setup Zabbix-agent configuration
