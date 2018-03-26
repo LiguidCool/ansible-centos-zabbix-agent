@@ -1,1 +1,1 @@
-# ansible-centos-basic-environment
+# ansible-centos-zabbix-agent
